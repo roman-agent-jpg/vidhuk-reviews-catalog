@@ -20,6 +20,8 @@ import random
 import logging
 import argparse
 import signal
+import re
+import subprocess
 from abc import ABC, abstractmethod
 from datetime import datetime, timezone
 from typing import List, Optional, Dict, Any, Tuple
@@ -29,12 +31,12 @@ import httpx
 # Local module imports
 try:
     from rewrite_engine.sanitizer import sanitize_review_text, sanitize_title, sanitize_text
-    from rewrite_engine.linter import lint_review, validate_rewritten_review
+    from rewrite_engine.linter import lint_review, validate_rewritten_review, COMPILED_ALL_CLICHES
     from rewrite_engine.prompts import detect_language, get_system_prompt, format_user_prompt
     from rewrite_engine.migrate_db import migrate_database
 except ImportError:
     from sanitizer import sanitize_review_text, sanitize_title, sanitize_text
-    from linter import lint_review, validate_rewritten_review
+    from linter import lint_review, validate_rewritten_review, COMPILED_ALL_CLICHES
     from prompts import detect_language, get_system_prompt, format_user_prompt
     try:
         from migrate_db import migrate_database
@@ -131,6 +133,13 @@ class MockLLMProvider(BaseLLMProvider):
         # Clean source dashes to avoid inheriting raw unicode dashes
         cleaned_text = orig_text.replace("—", ", ").replace("–", ", ").replace("―", ", ")
         cleaned_title = orig_title.replace("—", " ").replace("–", " ").strip()
+
+        # Remove any donor clichés from original text
+        for pat in COMPILED_ALL_CLICHES:
+            cleaned_text = pat.sub("", cleaned_text)
+            cleaned_title = pat.sub("", cleaned_title)
+        cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
+        cleaned_title = re.sub(r"\s+", " ", cleaned_title).strip()
 
         # Build varied human opening and structure based on language, role, and rating
         if lang == "uk":
@@ -623,6 +632,23 @@ class AsyncRewriteRunner:
             conn.close()
             logger.info("Database writer completed.")
 
+    async def gdrive_sync_task(self):
+        """Periodic background upload to Google Drive."""
+        while self.running:
+            await asyncio.sleep(300)
+            if not self.running:
+                break
+            try:
+                logger.info("[AutoSync] Backing up vidhuk_full.db to Google Drive...")
+                await asyncio.to_thread(
+                    subprocess.run,
+                    ['rclone', 'copyto', self.db_path, 'gdrive:Парсер для отзовика/vidhuk_full.db'],
+                    capture_output=True, timeout=240
+                )
+                logger.info("[AutoSync] Backup to Google Drive finished.")
+            except Exception as e:
+                logger.warning(f"[AutoSync] Backup warning: {e}")
+
     async def run(self):
         """Main execution entrypoint."""
         self.start_time = time.monotonic()
@@ -631,6 +657,7 @@ class AsyncRewriteRunner:
         producer = asyncio.create_task(self.producer_task())
         workers = [asyncio.create_task(self.worker_task(i)) for i in range(self.concurrency)]
         writer = asyncio.create_task(self.db_writer_task())
+        syncer = asyncio.create_task(self.gdrive_sync_task())
 
         await producer
         await self.review_queue.join()
@@ -639,7 +666,20 @@ class AsyncRewriteRunner:
         await asyncio.gather(*workers, return_exceptions=True)
         await self.write_queue.join()
         await writer
+        syncer.cancel()
         await self.provider.close()
+
+        # Final cloud backup
+        try:
+            logger.info("Final backup to Google Drive...")
+            await asyncio.to_thread(
+                subprocess.run,
+                ['rclone', 'copyto', self.db_path, 'gdrive:Парсер для отзовика/vidhuk_full.db'],
+                capture_output=True, timeout=240
+            )
+            logger.info("Final backup to Google Drive finished.")
+        except Exception as e:
+            logger.warning(f"Final backup warning: {e}")
 
         total_time = max(0.01, time.monotonic() - self.start_time)
         logger.info(
