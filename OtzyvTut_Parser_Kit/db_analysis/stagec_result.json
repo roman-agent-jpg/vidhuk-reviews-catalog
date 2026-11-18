@@ -1,0 +1,1694 @@
+{
+ "total": 214,
+ "empty_no_reviews": [
+  {
+   "id": 435,
+   "title": "technorocket отзывы",
+   "len": 26,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 469,
+   "title": "",
+   "len": 39,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 895,
+   "title": "одна тестовая компания",
+   "len": 0,
+   "reviews": 0,
+   "cats": [
+    "Отзывы банки",
+    "Биржа отзывы"
+   ]
+  },
+  {
+   "id": 896,
+   "title": "Профипраця",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 1039,
+   "title": "Никто",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 1455,
+   "title": "https://hostiq.ua/clients/aff.php?aff=2197&amp;lid=3",
+   "len": 17,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 1784,
+   "title": "12352135125",
+   "len": 11,
+   "reviews": 0,
+   "cats": [
+    "Медицина отзывы",
+    "Аптеки отзывы"
+   ]
+  },
+  {
+   "id": 1788,
+   "title": "АН Этажи",
+   "len": 22,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 1957,
+   "title": "beri.ua",
+   "len": 8,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2053,
+   "title": "Beri",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2144,
+   "title": "reachstore",
+   "len": 42,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2188,
+   "title": "алсер",
+   "len": 35,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2218,
+   "title": "Gobal Praca",
+   "len": 23,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2322,
+   "title": "Ukraina_help_all",
+   "len": 9,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2327,
+   "title": "@pass_ua",
+   "len": 33,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2333,
+   "title": "Portal121",
+   "len": 43,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2372,
+   "title": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \\\"СП СНАБТОРГ\\\"",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2391,
+   "title": "Европа Сервіс",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2519,
+   "title": "4tv.in.ua",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2577,
+   "title": "shop-mebel77.ru",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2601,
+   "title": "SPN Baits",
+   "len": 9,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2607,
+   "title": "EuroPracya",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2611,
+   "title": "ООО Магнум, Куценко Т.В.",
+   "len": 22,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2620,
+   "title": "Ігор Бурма",
+   "len": 13,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2621,
+   "title": "Инвест",
+   "len": 23,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2629,
+   "title": "little service 21 Маленький сервіс з великими можливостями",
+   "len": 37,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2635,
+   "title": "Zootovary.net.ua",
+   "len": 10,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2654,
+   "title": "агентство безопасности Зевс",
+   "len": 30,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2659,
+   "title": "HELPO",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2669,
+   "title": "Just school",
+   "len": 37,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2686,
+   "title": "globalmaster.com.ua",
+   "len": 42,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2688,
+   "title": "tv-master.kiev.ua",
+   "len": 46,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2690,
+   "title": "zolotie-ruki.com.ua",
+   "len": 22,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2700,
+   "title": "СОЛЕНСІ",
+   "len": 42,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2721,
+   "title": "Doradus",
+   "len": 40,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2739,
+   "title": "AvtoDvig",
+   "len": 35,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2762,
+   "title": "Let\\'s drink Александр Задерей",
+   "len": 8,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2803,
+   "title": "Farfacia",
+   "len": 43,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2819,
+   "title": "ЄAvtoТрейд",
+   "len": 39,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2906,
+   "title": "Магазин Вamboosun ФОП Кучеренко Денис Сергійович",
+   "len": 22,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3005,
+   "title": "beautydevice.com.ua",
+   "len": 46,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3011,
+   "title": "skini.com.ua интернет магазин",
+   "len": 38,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3025,
+   "title": "Робота в Європі",
+   "len": 17,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3157,
+   "title": "AutoCloud",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3158,
+   "title": "ТОВ\\\"ИДГ\\\"",
+   "len": 49,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3162,
+   "title": "AUTO CLOUD",
+   "len": 34,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3258,
+   "title": "https://t.me/DE_EXPRESS_24",
+   "len": 26,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3315,
+   "title": "Кабель",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3408,
+   "title": "rucareer LTD",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3434,
+   "title": "Crocs shoes",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3509,
+   "title": "Shafa-Шафа",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3541,
+   "title": "ALPIN",
+   "len": 0,
+   "reviews": 0,
+   "cats": []
+  }
+ ],
+ "dup_of_published": [
+  {
+   "id": 1545,
+   "title": "Familyshop.top",
+   "len": 186,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    1681
+   ]
+  },
+  {
+   "id": 2121,
+   "title": "Профессиональная стоматология Люми-Дент отзывы — сеть клиник современной стоматологии",
+   "len": 418,
+   "reviews": 32,
+   "cats": [],
+   "published_ids": [
+    1301
+   ]
+  },
+  {
+   "id": 2183,
+   "title": "Medeus Medical Center отзывы — клиника квантовой медицины",
+   "len": 0,
+   "reviews": 7,
+   "cats": [],
+   "published_ids": [
+    1294
+   ]
+  },
+  {
+   "id": 2205,
+   "title": "Компания moonstone.com.ua",
+   "len": 101,
+   "reviews": 1,
+   "cats": [],
+   "published_ids": [
+    2207
+   ]
+  },
+  {
+   "id": 2210,
+   "title": "ТОВ \\\"КЦОЗ 911\\\"",
+   "len": 146,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2209
+   ]
+  },
+  {
+   "id": 2268,
+   "title": "Европа Сервис",
+   "len": 18,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2133
+   ]
+  },
+  {
+   "id": 2376,
+   "title": "Yoki Львів",
+   "len": 227,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2374
+   ]
+  },
+  {
+   "id": 2394,
+   "title": "Школа іноземної мови SkyLingua",
+   "len": 29,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2392
+   ]
+  },
+  {
+   "id": 2463,
+   "title": "AL-RISE Sp z o.o",
+   "len": 20,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2412
+   ]
+  },
+  {
+   "id": 2574,
+   "title": "ТОВ ФАРМАЛЮКС УКРАЇНА",
+   "len": 382,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2579
+   ]
+  },
+  {
+   "id": 2609,
+   "title": "Sculptor lash",
+   "len": 232,
+   "reviews": 1,
+   "cats": [],
+   "published_ids": [
+    2843
+   ]
+  },
+  {
+   "id": 2623,
+   "title": "VAM system",
+   "len": 999,
+   "reviews": 2,
+   "cats": [],
+   "published_ids": [
+    2755
+   ]
+  },
+  {
+   "id": 2652,
+   "title": "izi work",
+   "len": 61,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2653
+   ]
+  },
+  {
+   "id": 2661,
+   "title": "ФайноБуд",
+   "len": 54,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3193
+   ]
+  },
+  {
+   "id": 2663,
+   "title": "ФайноБуд",
+   "len": 32,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3193
+   ]
+  },
+  {
+   "id": 2685,
+   "title": "OLX",
+   "len": 0,
+   "reviews": 2,
+   "cats": [],
+   "published_ids": [
+    219
+   ]
+  },
+  {
+   "id": 2725,
+   "title": "Ремонт холодильников Ирпень - Ирпень Сервис +380674402720",
+   "len": 245,
+   "reviews": 2,
+   "cats": [],
+   "published_ids": [
+    2727
+   ]
+  },
+  {
+   "id": 2737,
+   "title": "AutoDvig",
+   "len": 314,
+   "reviews": 1,
+   "cats": [],
+   "published_ids": [
+    2741
+   ]
+  },
+  {
+   "id": 2750,
+   "title": "\\\"ЄАвтоTrade\\\"",
+   "len": 65,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2753
+   ]
+  },
+  {
+   "id": 2752,
+   "title": "\\\"ЄАвтоTrade\\\"",
+   "len": 74,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2753
+   ]
+  },
+  {
+   "id": 2786,
+   "title": "Packotek",
+   "len": 289,
+   "reviews": 3,
+   "cats": [],
+   "published_ids": [
+    2851
+   ]
+  },
+  {
+   "id": 2796,
+   "title": "ФЛП \\\"Дорнер Денис Вадимович\\\", \\\"Сучасна домофонна компанія\\\"",
+   "len": 636,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2797
+   ]
+  },
+  {
+   "id": 2813,
+   "title": "Hardman",
+   "len": 623,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2818
+   ]
+  },
+  {
+   "id": 2814,
+   "title": "Hardman",
+   "len": 646,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2818
+   ]
+  },
+  {
+   "id": 2815,
+   "title": "Hardman",
+   "len": 623,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2818
+   ]
+  },
+  {
+   "id": 2817,
+   "title": "Hardman",
+   "len": 623,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2818
+   ]
+  },
+  {
+   "id": 2832,
+   "title": "Бургоризонт (burgorizont.com.ua)",
+   "len": 78,
+   "reviews": 1,
+   "cats": [],
+   "published_ids": [
+    2833
+   ]
+  },
+  {
+   "id": 2836,
+   "title": "Royal Trans Cargo\\\".",
+   "len": 355,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2838
+   ]
+  },
+  {
+   "id": 2867,
+   "title": "atlantshina.com.ua",
+   "len": 187,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2869
+   ]
+  },
+  {
+   "id": 2909,
+   "title": "darkshop.in.ua",
+   "len": 17,
+   "reviews": 1,
+   "cats": [],
+   "published_ids": [
+    2907
+   ]
+  },
+  {
+   "id": 2911,
+   "title": "darkshop.in.ua",
+   "len": 0,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    2907
+   ]
+  },
+  {
+   "id": 3085,
+   "title": "Sklotara.kiev.ua — Оптовий Інтернет Магазин Скляної Тари",
+   "len": 846,
+   "reviews": 2,
+   "cats": [],
+   "published_ids": [
+    3168
+   ]
+  },
+  {
+   "id": 3149,
+   "title": "Марина Соколовская",
+   "len": 671,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3148
+   ]
+  },
+  {
+   "id": 3219,
+   "title": "Магазин \\\"Просфора\\\" - оборудование для пекарни от производителя",
+   "len": 879,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3223
+   ]
+  },
+  {
+   "id": 3221,
+   "title": "Магазин \\\"Просфора\\\" - оборудование для пекарни от производителя",
+   "len": 879,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3223
+   ]
+  },
+  {
+   "id": 3282,
+   "title": "Олх",
+   "len": 3,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3203
+   ]
+  },
+  {
+   "id": 3292,
+   "title": "ООО Медицинский Центр \\\"Клиника им. Гальченко В.В.\\\"",
+   "len": 408,
+   "reviews": 1,
+   "cats": [],
+   "published_ids": [
+    3303
+   ]
+  },
+  {
+   "id": 3299,
+   "title": "Metroventa",
+   "len": 10,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3300
+   ]
+  },
+  {
+   "id": 3314,
+   "title": "Skylots",
+   "len": 0,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3632
+   ]
+  },
+  {
+   "id": 3357,
+   "title": "ТОВ “ФК ПРОСТО КРЕДИТ”",
+   "len": 190,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3359
+   ]
+  },
+  {
+   "id": 3459,
+   "title": "Tatra Garden",
+   "len": 32,
+   "reviews": 1,
+   "cats": [],
+   "published_ids": [
+    3461
+   ]
+  },
+  {
+   "id": 3460,
+   "title": "Tatra Garden",
+   "len": 32,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3461
+   ]
+  },
+  {
+   "id": 3464,
+   "title": "Vanilla Dream - производитель мебели, домашнего текстиля и комфорта",
+   "len": 0,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3465,
+    3466
+   ]
+  },
+  {
+   "id": 3484,
+   "title": "ФОП ANTON OLESHKO Unity Game Developer",
+   "len": 383,
+   "reviews": 2,
+   "cats": [],
+   "published_ids": [
+    3486
+   ]
+  },
+  {
+   "id": 3525,
+   "title": "facebook.com",
+   "len": 996,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3527
+   ]
+  },
+  {
+   "id": 3529,
+   "title": "КМ СЕВЕН",
+   "len": 217,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3521,
+    3538
+   ]
+  },
+  {
+   "id": 3542,
+   "title": "Bayern Verkauf",
+   "len": 222,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3150
+   ]
+  },
+  {
+   "id": 3610,
+   "title": "Space Transfer",
+   "len": 974,
+   "reviews": 1,
+   "cats": [],
+   "published_ids": [
+    3612
+   ]
+  },
+  {
+   "id": 3705,
+   "title": "Napas 420",
+   "len": 997,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3711
+   ]
+  },
+  {
+   "id": 3708,
+   "title": "Napas 420",
+   "len": 927,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3711
+   ]
+  },
+  {
+   "id": 3732,
+   "title": "ExportParts",
+   "len": 740,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3738
+   ]
+  },
+  {
+   "id": 3736,
+   "title": "ExportParts",
+   "len": 997,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3738
+   ]
+  },
+  {
+   "id": 3753,
+   "title": "KROKK",
+   "len": 698,
+   "reviews": 0,
+   "cats": [],
+   "published_ids": [
+    3756
+   ]
+  }
+ ],
+ "dup_of_draft": [
+  {
+   "id": 1822,
+   "title": "Profi Praca",
+   "len": 646,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 995
+  },
+  {
+   "id": 2145,
+   "title": "reachstore",
+   "len": 42,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2144
+  },
+  {
+   "id": 2312,
+   "title": "Darlean",
+   "len": 15,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2310
+  },
+  {
+   "id": 2314,
+   "title": "Darlean",
+   "len": 15,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2310
+  },
+  {
+   "id": 2323,
+   "title": "ukraina_help_all",
+   "len": 337,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2322
+  },
+  {
+   "id": 2328,
+   "title": "pass_ua",
+   "len": 22,
+   "reviews": 1,
+   "cats": [],
+   "first_draft_id": 2327
+  },
+  {
+   "id": 2551,
+   "title": "Мошенница, \\\"сдающая\\\" квартиру",
+   "len": 0,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2550
+  },
+  {
+   "id": 2606,
+   "title": "Куценко Т.В.",
+   "len": 91,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2605
+  },
+  {
+   "id": 2612,
+   "title": "ООО Магнум, Куценко Т.В.",
+   "len": 218,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2611
+  },
+  {
+   "id": 2763,
+   "title": "Let\\'s drink Александр задерей",
+   "len": 561,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2762
+  },
+  {
+   "id": 2805,
+   "title": "Farfacia",
+   "len": 43,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 2803
+  },
+  {
+   "id": 3164,
+   "title": "AUTO CLOUD",
+   "len": 278,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 3162
+  },
+  {
+   "id": 3181,
+   "title": "Autocloud",
+   "len": 20,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 3157
+  },
+  {
+   "id": 3365,
+   "title": "Profi Praca",
+   "len": 6,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 995
+  },
+  {
+   "id": 3450,
+   "title": "Forellis",
+   "len": 0,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 3448
+  },
+  {
+   "id": 3656,
+   "title": "BlackOut",
+   "len": 647,
+   "reviews": 0,
+   "cats": [],
+   "first_draft_id": 3654
+  }
+ ],
+ "publishable": [
+  {
+   "id": 1599,
+   "title": "Суши-Хаус",
+   "len": 276,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 1620,
+   "title": "iDom Store&amp;Service",
+   "len": 571,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 1852,
+   "title": "time+",
+   "len": 383,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 1854,
+   "title": "F-work.in",
+   "len": 142,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 1891,
+   "title": "Raskras",
+   "len": 78,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2189,
+   "title": "InterLogistic",
+   "len": 429,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2222,
+   "title": "Vapechill",
+   "len": 168,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2320,
+   "title": "Диджитал агентство Idea Digital Agency",
+   "len": 275,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2324,
+   "title": "Антон Выборный. Управляя информацией",
+   "len": 698,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2565,
+   "title": "Clean One",
+   "len": 437,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2573,
+   "title": "ТОВ \\\"ФАРМА ЛЮКС УКРАЇНА\\\"",
+   "len": 382,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2602,
+   "title": "MAVI STEP",
+   "len": 997,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2605,
+   "title": "Куценко Т.В.",
+   "len": 69,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2614,
+   "title": "Costa Brava",
+   "len": 324,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2618,
+   "title": "Компания DeLav",
+   "len": 92,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2622,
+   "title": "kartiny-origami.in.ua",
+   "len": 331,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2631,
+   "title": "Робила замовлення вперше на цьому сайті",
+   "len": 317,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2633,
+   "title": "мир опта",
+   "len": 250,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2650,
+   "title": "Welcom-to-usa",
+   "len": 117,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2660,
+   "title": "Aw.group.ua",
+   "len": 129,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2665,
+   "title": "Кабинет доктора Ломанова",
+   "len": 119,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2692,
+   "title": "Інтернет-магазин матраців Usleep",
+   "len": 61,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2702,
+   "title": "Сервісний центр Пральний Майчтер",
+   "len": 255,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2716,
+   "title": "GoodMood",
+   "len": 225,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2758,
+   "title": "Serp Holders",
+   "len": 117,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2760,
+   "title": "Компания ЄАвтоTrade",
+   "len": 245,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2825,
+   "title": "Медицинский центр Medical Plaza в Киеве на Оболони",
+   "len": 998,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2890,
+   "title": "AFS Group AFS GRUOP PRO",
+   "len": 101,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 2945,
+   "title": "Профіпраця",
+   "len": 598,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3003,
+   "title": "ТОВ \\\"ТРАНС ГУДС\\\"",
+   "len": 98,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3007,
+   "title": "femi.in.ua Професійна косметика для обличчя",
+   "len": 86,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3009,
+   "title": "voosa.ua інтернет магазин",
+   "len": 67,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3013,
+   "title": "laboratorium.com.ua - інтернет магазин",
+   "len": 144,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3015,
+   "title": "moons.in.ua оригінальна косметика",
+   "len": 67,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3021,
+   "title": "\\\"Закарпат Зруб-Буд\\\"",
+   "len": 997,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3023,
+   "title": "Общество с ограниченной ответственностью «Торгово-консалтинговый центр Запад-Восток»",
+   "len": 158,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3225,
+   "title": "Просфора - оборудование для пекарни от производителя",
+   "len": 879,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3226,
+   "title": "Toprating.casino",
+   "len": 542,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3230,
+   "title": "ШвидкоГроші",
+   "len": 140,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3240,
+   "title": "Крутицкая Л.В.",
+   "len": 62,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3319,
+   "title": "Финансовый мошенник Прус Юрий.",
+   "len": 776,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3323,
+   "title": "Интернет-магазин \\\"Kanctovar\\\"",
+   "len": 423,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3324,
+   "title": "Дмитрий Толстокулаков",
+   "len": 471,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3387,
+   "title": "Сайт cianet.info",
+   "len": 965,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3425,
+   "title": "Діпсервіс",
+   "len": 180,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3431,
+   "title": "Mobanking",
+   "len": 963,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3654,
+   "title": "BlackOut",
+   "len": 647,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3747,
+   "title": "MadBid.com",
+   "len": 595,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3763,
+   "title": "Autopalma | Автопальма — маркетплейс автозапчастин",
+   "len": 875,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3792,
+   "title": "Школа Жени Коваленко по нейросетям и искусственному интеллекту.",
+   "len": 512,
+   "reviews": 0,
+   "cats": []
+  },
+  {
+   "id": 3794,
+   "title": "Layboard.com",
+   "len": 550,
+   "reviews": 0,
+   "cats": []
+  }
+ ],
+ "draft_with_reviews_unique": [
+  {
+   "id": 995,
+   "title": "Profi Praca",
+   "len": 659,
+   "reviews": 2,
+   "cats": []
+  },
+  {
+   "id": 2164,
+   "title": "STEROID-SHOP.COM.UA",
+   "len": 126,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2310,
+   "title": "Darlean",
+   "len": 30,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2317,
+   "title": "RemBase",
+   "len": 158,
+   "reviews": 2,
+   "cats": []
+  },
+  {
+   "id": 2319,
+   "title": "Стероид Шоп",
+   "len": 64,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2550,
+   "title": "Мошенница, \\\"сдающая\\\" квартиру",
+   "len": 28,
+   "reviews": 2,
+   "cats": []
+  },
+  {
+   "id": 2566,
+   "title": "Питомник Balantins",
+   "len": 26,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2567,
+   "title": "Интернет - магазин наручных часов Cybertime",
+   "len": 43,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2569,
+   "title": "euro-device.com.ua",
+   "len": 16,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2571,
+   "title": "ВІКНА НОВІ",
+   "len": 22,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2584,
+   "title": "Art Soft Digital",
+   "len": 605,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2589,
+   "title": "SELLDO",
+   "len": 473,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2613,
+   "title": "Foto-cosmopolit",
+   "len": 155,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2625,
+   "title": "Тодо гласс зеркала",
+   "len": 26,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2626,
+   "title": "WEMART",
+   "len": 111,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2630,
+   "title": "Михайлівська пошта",
+   "len": 78,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2657,
+   "title": "Денис Еделькин",
+   "len": 160,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2667,
+   "title": "Охранное агентство ЗЕВС",
+   "len": 121,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2670,
+   "title": "Beegreen",
+   "len": 971,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2679,
+   "title": "ТТК Нова Україна",
+   "len": 103,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2681,
+   "title": "Мошенник Гребёнкин Виктор Викторович",
+   "len": 719,
+   "reviews": 2,
+   "cats": []
+  },
+  {
+   "id": 2683,
+   "title": "Юкирс",
+   "len": 56,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2696,
+   "title": "Salon Service Rivne Салон Сервис Ровно",
+   "len": 535,
+   "reviews": 2,
+   "cats": []
+  },
+  {
+   "id": 2698,
+   "title": "Будівельна компанія КОЛЕО",
+   "len": 70,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2710,
+   "title": "Люмі-дент",
+   "len": 0,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2788,
+   "title": "TATA AGRO-MOTO",
+   "len": 951,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2790,
+   "title": "Ekonomteplo",
+   "len": 164,
+   "reviews": 3,
+   "cats": []
+  },
+  {
+   "id": 2792,
+   "title": "Оriginal helix store",
+   "len": 237,
+   "reviews": 2,
+   "cats": []
+  },
+  {
+   "id": 2812,
+   "title": "Мавіста",
+   "len": 0,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2830,
+   "title": "Royal Trans",
+   "len": 39,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2841,
+   "title": "VIP call-center",
+   "len": 32,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 2884,
+   "title": "Euromeblika.com.ua",
+   "len": 648,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3026,
+   "title": "Park. Art of Rest",
+   "len": 365,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3123,
+   "title": "ФЕНИКС",
+   "len": 946,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3182,
+   "title": "All rise",
+   "len": 335,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3327,
+   "title": "Балтийская Жемчужина медицинский центр",
+   "len": 354,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3405,
+   "title": "Instagram",
+   "len": 9,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3421,
+   "title": "VapeHub",
+   "len": 7,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3435,
+   "title": "avtoresurs.kh.ua",
+   "len": 217,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3448,
+   "title": "Forellis",
+   "len": 0,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3496,
+   "title": "Libertyauto",
+   "len": 19,
+   "reviews": 1,
+   "cats": []
+  },
+  {
+   "id": 3700,
+   "title": "Онлайн-магазин Climatronic",
+   "len": 274,
+   "reviews": 1,
+   "cats": []
+  }
+ ]
+}

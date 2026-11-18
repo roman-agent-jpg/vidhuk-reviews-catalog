@@ -1,0 +1,82 @@
+# Import batch invest: 80 cards (detector-A: 8)
+
+- views 2099 | ★5 | 80 отз. | crypto-bank.ws [ДЕТЕКТОР-A]
+- views None | ★4.8 | 79 отз. | Брокерская компания ИнстаФорекс [ДЕТЕКТОР-A]
+- views 980 | ★5 | 52 отз. | Actio-fast-pay.net - анонімний обмін криптовалюта [ДЕТЕКТОР-A]
+- views None | ★4.8 | 32 отз. | oxytrade.net инвестиционная компания [ДЕТЕКТОР-A]
+- views None | ★5 | 27 отз. | Валютний обмінник acryptoexchange.com [ДЕТЕКТОР-A]
+- views 1050 | ★5 | 23 отз. | Центр нерухомості "ПаркІнвестКіев" [ДЕТЕКТОР-A]
+- views 211 | ★5 | 20 отз. | UEX Crypto Exchange [ДЕТЕКТОР-A]
+- views 225 | ★5 | 20 отз. | Міжнародний бізнес форум інвестицій та IT - технологій Legat Business Forum [ДЕТЕКТОР-A]
+- views 86326 | ★3.3 | 185 отз. | FOREX MMCIS group
+- views 8039 | ★4.1 | 22 отз. | Forex Club
+- views 7939 | ★3.8 | 22 отз. | israel-investments.com
+- views 6675 | ★3.8 | 20 отз. | M2invest
+- views 5613 | ★3.4 | 138 отз. | Українська криптовалютна біржа Qmall
+- views 2940 | ★4.3 | 68 отз. | Cryptology Key / Академія Трейдингу
+- views 2760 | ★1.2 | 17 отз. | Forex-Brokers.pro
+- views 2527 | ★1.4 | 43 отз. | Брокер Ексун
+- views 2319 | ★4.2 | 22 отз. | Trading fuel company
+- views 1630 | ★4.4 | 40 отз. | WekSell.com - обмінник криптовалют
+- views 1540 | ★4 | 4 отз. | Компания Investmaster Group
+- views 1227 | ★4.1 | 17 отз. | Інвестиційний проект Graybet.pro
+- views 1060 | ★4.2 | 5 отз. | Новый Инвестиционный проект
+- views 985 | ★5 | 5 отз. | Forward Sport Invest
+- views 927 | ★1 | 1 отз. | Асоціація Безпеки Трейдинга
+- views 790 | ★5 | 3 отз. | Letspay.me обмін криптовалюта
+- views 776 | ★5 | 1 отз. | Leverage Investments
+- views 726 | ★4 | 4 отз. | Arcade Invest - інвестиції в гейм індустрію
+- views 725 | ★4.4 | 31 отз. | Брокер Divestix
+- views 713 | ★5 | 1 отз. | Смарт Агро-Інвест Павлоград
+- views 667 | ★3.3 | 6 отз. | ​Trustee Plus криптогаманець
+- views 640 | ★4.6 | 19 отз. | Академія Crypto Lady Яни Даренської
+- views 637 | ★1.5 | 8 отз. | InvestMarket (Інвестмаркет)
+- views 596 | ★1.6 | 16 отз. | Криптобіржа Tidex
+- views 545 | ★5 | 1 отз. | safeecoinvest.com
+- views 520 | ★5 | 10 отз. | Local Trade - кріптовалютная біржа
+- views 426 | ★4.8 | 12 отз. | Jerold Trading
+- views 426 | ★4.3 | 6 отз. | Swap-line.com - обмінник криптовалют
+- views 418 | ★3 | 2 отз. | Інвестиційна компанія UTEX UTT
+- views 417 | ★1 | 1 отз. | Сайт обмінник exyocrypto.com
+- views 375 | ★1.5 | 8 отз. | Crypto Investor
+- views 360 | ★2.5 | 2 отз. | 3FG International Trading LLC
+- views 350 | ★4.5 | 2 отз. | CRYPTO INDUSTRIES
+- views 310 | ★4.8 | 6 отз. | Світ Інвест – Школа трейдингу
+- views 299 | ★5 | 3 отз. | Money-Office.com обмінник електронних і криптовалюта
+- views 276 | ★4.7 | 13 отз. | Divestix Brokerage
+- views 238 | ★5 | 1 отз. | menyala.info - обмін криптовалют
+- views 198 | ★4.9 | 13 отз. | Club.exchange - інвестиції в блокчейн технології
+- views 198 | ★5 | 3 отз. | ​CryptoSummer.com.ua
+- views 186 | ★5 | 1 отз. | Інвестиційна платформа Allinity
+- views 169 | ★5 | 2 отз. | САН-ІНВЕСТ
+- views 159 | ★1 | 1 отз. | Курси трейдингу 9tonn (9_tonn_crypto)
+- views 139 | ★2 | 1 отз. | Антарис Інвест
+- views 137 | ★5 | 4 отз. | Кріптобіржа Кепітал вейл (capitalwhale)
+- views 136 | ★4 | 1 отз. | Криптообмінник Крайбекс (crybex)
+- views 115 | ★1 | 1 отз. | Криптообмінник massbit.org
+- views 109 | ★5 | 3 отз. | Binary Studio Academy
+- views 106 | ★4.3 | 3 отз. | Онлайн криптообмінник pokupaika.in.ua
+- views 105 | ★1 | 1 отз. | ТОВ "УПГ-ІНВЕСТ" (ТМ "Сяйвір")
+- views 96 | ★1 | 1 отз. | Crypto Arbitrage Academy
+- views 89 | ★5 | 2 отз. | Криптобіржа BTC TRADE
+- views 87 | ★4.7 | 3 отз. | Криптобіржа KuCoin
+- views 86 | ★4.7 | 3 отз. | CoinsBar онлайн-обмінник криптовалют
+- views 78 | ★5 | 2 отз. | Криптобіржа MEXС
+- views 76 | ★4.7 | 3 отз. | Pionex криптовалютна біржа
+- views 68 | ★5 | 2 отз. | Криптобіржа OKX
+- views 60 | ★5 | 2 отз. | Crypto Recovery
+- views 60 | ★5 | 2 отз. | Changeit онлайн-криптообмінник
+- views None | ★4.2 | 147 отз. | IFG Investment Finance Group
+- views None | ★4.6 | 113 отз. | Global Sport Invest
+- views None | ★4.7 | 98 отз. | Компания Integra Money
+- views None | ★4.3 | 55 отз. | Crypto Crew
+- views None | ★4.6 | 34 отз. | Botty | Crypto Autopilot
+- views None | ★2.6 | 20 отз. | Crypto-Money24
+- views None | ★4.2 | 17 отз. | Crypto Invert инвестиционная платформа
+- views None | ★5 | 16 отз. | Gold Diamond Invest
+- views None | ★1.7 | 15 отз. | СК Будінвест (м. Дніпро)
+- views None | ★4.5 | 15 отз. | Инвестиционная компания UMG
+- views None | ★5 | 12 отз. | Free2ex - криптобіржа
+- views None | ★3.2 | 11 отз. | Bexhill Trading
+- views None | ★4.2 | 10 отз. | Инвестор-строй стройматериалы в Харькове
+- views None | ★4.9 | 9 отз. | cryptonet.pro

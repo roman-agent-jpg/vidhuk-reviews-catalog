@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>OtzyvTut Engine — управление сайтом отзывов</title>
+<style>
+  body { font-family: system-ui, Arial, sans-serif; margin: 0; background: #f4f6f9; color: #1c2733; font-size: 16px; }
+  header { background: #123a5f; color: #fff; padding: 16px 24px; }
+  header h1 { margin: 0; font-size: 22px; }
+  header p { margin: 4px 0 0; opacity: .85; font-size: 14px; }
+  nav { display: flex; gap: 8px; padding: 12px 24px 0; flex-wrap: wrap; }
+  nav button { padding: 10px 18px; border: 1px solid #c4cedb; background: #fff; border-radius: 8px; cursor: pointer; font-size: 15px; }
+  nav button.active { background: #123a5f; color: #fff; border-color: #123a5f; }
+  main { padding: 16px 24px 40px; }
+  .tab { display: none; }
+  .tab.active { display: block; }
+  .card { background: #fff; border: 1px solid #dde3ec; border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+  .card h2 { margin: 0 0 10px; font-size: 18px; }
+  .ok { color: #1a7f37; font-weight: 600; }
+  .bad { color: #b42318; font-weight: 600; }
+  button.action { background: #1a7f37; color: #fff; border: 0; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-size: 15px; }
+  button.action.blue { background: #1256a0; }
+  button.action.grey { background: #5b6b7f; }
+  button.action:disabled { opacity: .5; cursor: default; }
+  select, input, textarea { padding: 9px; border: 1px solid #c4cedb; border-radius: 8px; font-size: 15px; }
+  table { border-collapse: collapse; width: 100%; background: #fff; }
+  th, td { border: 1px solid #dde3ec; padding: 8px; text-align: left; vertical-align: top; font-size: 14px; }
+  th { background: #eef2f8; }
+  .status { padding: 2px 8px; border-radius: 10px; font-size: 12px; white-space: nowrap; }
+  .st-parsed { background: #e8eefc; } .st-text_ready { background: #fff3cd; }
+  .st-queued { background: #e2e3e5; } .st-published { background: #d1e7dd; }
+  .job { background: #eef6ff; border: 1px solid #bcd6f5; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
+  .job.error { background: #fdecea; border-color: #f5c2c0; }
+  small { color: #5b6b7f; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  textarea.wide { width: 100%; box-sizing: border-box; }
+</style>
+</head>
+<body>
+<header>
+  <h1>OtzyvTut Engine</h1>
+  <p>Парсинг фактов → редакционные тексты → публикация на otzyvtut.com. Всё видно на одном экране.</p>
+</header>
+<nav>
+  <button data-tab="home" class="active">Главная</button>
+  <button data-tab="parse">1. Парсер</button>
+  <button data-tab="queue">2. Очередь и тексты</button>
+  <button data-tab="reviews">3. Отзывы из сети</button>
+  <button data-tab="activity">Активность компаний</button>
+  <button data-tab="manual">Обзор в карточку</button>
+  <button data-tab="settings">Настройки</button>
+</nav>
+<main>
+  <div id="jobs"></div>
+
+  <section class="tab active" id="tab-home">
+    <div class="card">
+      <h2>Готовность</h2>
+      <p id="readiness">Загрузка…</p>
+    </div>
+    <div class="card">
+      <h2>Очередь в цифрах</h2>
+      <p id="counts">—</p>
+    </div>
+    <div class="card">
+      <h2>Журнал действий</h2>
+      <div id="log">—</div>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-parse">
+    <div class="card">
+      <h2>Собрать компании с донора</h2>
+      <p>Парсер собирает факты: название, чем занимается компания, её рейтинг и число отзывов на внешней площадке, просмотры. Детектор отмечает компании с «идеальной репутацией» (рейтинг 4.8+ при 20+ отзывах).</p>
+      <div class="row">
+        <label>Ниша: <select id="niche"></select></label>
+        <label>Сколько карточек: <input id="limit" type="number" value="20" min="1" max="60" style="width:80px"></label>
+        <button class="action" id="btn-parse">Запустить парсер</button>
+      </div>
+      <p><small>Собранные карточки попадут во вкладку «Очередь и тексты».</small></p>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-queue">
+    <div class="card">
+      <h2>Очередь карточек</h2>
+      <div class="row" style="margin-bottom:10px">
+        <button class="action blue" id="btn-gen-overview">Написать обзоры (Gemini)</button>
+        <button class="action blue" id="btn-gen-desc">Написать описания (Gemini)</button>
+        <button class="action" id="btn-publish">Создать на сайте (черновики)</button>
+        <button class="action" id="btn-publish-now">Создать и опубликовать</button>
+        <button class="action grey" id="btn-publish-ids">Опубликовать выбранные черновики</button>
+        <button class="action grey" id="btn-export">Экспорт в файл</button>
+        <button class="action grey" id="btn-remove">Убрать из очереди</button>
+      </div>
+      <p><small>Действия применяются к отмеченным карточкам; если ничего не отмечено — ко всем подходящим. «Черновики» — безопасный режим: карточка создаётся на сайте, но посетителям не видна, пока не опубликуешь.</small></p>
+      <div id="queue-table">—</div>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-reviews">
+    <div class="card">
+      <h2>Что пишут о компании в интернете — всё на одном экране</h2>
+      <p>Введи название компании (например, «ШвидкоГроші») или вставь прямую ссылку на её карточку на vidhuk.ua, minfin.com.ua, vnutri.org, moshennik.eu, jobs.dou.ua или otzovik.com. По названию ищутся vidhuk, vnutri, moshennik и DOU; для Minfin и Otzovik вставляй прямую ссылку. Программа соберёт отзывы клиентов и сотрудников со всех источников: кто, когда, с какой оценкой и что пишет. Плюс сводка: средний рейтинг, доля негатива, всплески по датам, повторяющиеся тексты, главные слова жалоб.</p>
+      <div class="row">
+        <input id="rev-query" type="text" placeholder="Название компании или ссылка на карточку" style="width:420px">
+        <label>Страниц по источнику: <input id="rev-pages" type="number" value="5" min="1" max="15" style="width:70px"></label>
+        <button class="action" id="btn-reviews">Собрать отзывы</button>
+      </div>
+      <p><small>Это экран мониторинга: собранное никуда не публикуется, оно для анализа и разбора с компанией.</small></p>
+    </div>
+    <div id="review-sets">—</div>
+  </section>
+
+  <section class="tab" id="tab-activity">
+    <div class="card">
+      <h2>Проверка активности по сайтам компаний</h2>
+      <p>По одному сайту на строку. Программа откроет каждый и проверит, работает ли он и есть ли на главной следы 2025–2026 годов.</p>
+      <textarea class="wide" id="act-urls" rows="6" placeholder="sgroshi.com.ua&#10;plc.ua&#10;justschool.me"></textarea>
+      <p><button class="action" id="btn-activity">Проверить</button></p>
+      <div id="act-results"></div>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-manual">
+    <div class="card">
+      <h2>Добавить готовый обзор в существующую карточку</h2>
+      <p>Выбери карточку из очереди с готовым обзором и укажи её ID на otzyvtut.com — обзор встанет блоком «Обзор редакции OtzyvTut» в конец описания. Если обзор там уже есть, программа не продублирует.</p>
+      <div class="row">
+        <select id="manual-item" style="min-width:280px"></select>
+        <input id="manual-wpid" type="number" placeholder="ID карточки на сайте" style="width:200px">
+        <button class="action" id="btn-append">Добавить обзор</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-settings">
+    <div class="card">
+      <h2>Ключи и доступы</h2>
+      <p><small>Хранятся только на этом компьютере в файле data/settings.json. Никуда не отправляются, кроме самих сервисов: ключ — в Google, логин и пароль — на otzyvtut.com.</small></p>
+      <p><label>API-ключ Google Gemini:<br><input id="set-gemini" type="password" style="width:420px"></label></p>
+      <p><label>Модель Gemini:<br><input id="set-model" type="text" style="width:240px"></label></p>
+      <p><label>Сайт:<br><input id="set-wpurl" type="text" style="width:320px"></label></p>
+      <p><label>Логин админки WordPress:<br><input id="set-wpuser" type="text" style="width:320px"></label></p>
+      <p><label>Пароль админки WordPress:<br><input id="set-wppass" type="password" style="width:320px"></label></p>
+      <p><button class="action" id="btn-settings">Сохранить настройки</button></p>
+      <p><small>Пароль в поле не показывается при повторном открытии — введи заново, если меняешь.</small></p>
+    </div>
+  </section>
+</main>
+
+<script>
+let state = null;
+const $ = id => document.getElementById(id);
+
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("nav button").forEach(x => x.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+  b.classList.add("active");
+  $("tab-" + b.dataset.tab).classList.add("active");
+});
+
+async function api(path, body) {
+  const r = await fetch(path, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : {});
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || ("HTTP " + r.status));
+  return j;
+}
+function say(e) { alert(e.message || e); }
+
+function selectedIds() {
+  return [...document.querySelectorAll(".qcheck:checked")].map(c => c.value);
+}
+
+function render() {
+  if (!state) return;
+  const s = state.settings;
+  $("readiness").innerHTML =
+    "Ключ Gemini: " + (s.gemini_ready ? '<span class="ok">указан</span>' : '<span class="bad">не указан</span>') + " (модель " + s.gemini_model + ")<br>" +
+    "Доступ к сайту: " + (s.wp_ready ? '<span class="ok">указан</span>' : '<span class="bad">не указан</span>') + " (" + s.wp_url + ")";
+  const counts = {};
+  state.queue.forEach(i => counts[i.status] = (counts[i.status] || 0) + 1);
+  const names = { parsed: "спарсено, без текста", text_ready: "текст готов", queued: "черновик на сайте", published: "опубликовано" };
+  $("counts").innerHTML = Object.keys(names).map(k => names[k] + ": <b>" + (counts[k] || 0) + "</b>").join(" · ") + " · всего в очереди: <b>" + state.queue.length + "</b>";
+  $("log").innerHTML = state.log.length ? state.log.map(l => "<div><small>" + l.ts + "</small> <b>" + l.action + "</b> " + (l.detail || "") + "</div>").join("") : "Пока пусто";
+  $("jobs").innerHTML = state.jobs.filter(j => j.state === "running" || j.state === "error").map(j =>
+    '<div class="job' + (j.state === "error" ? " error" : "") + '"><b>' + j.kind + '</b>: ' + (j.state === "error" ? j.error : j.progress) + "</div>").join("");
+  const nicheSel = $("niche");
+  if (!nicheSel.options.length) Object.entries(state.niches).forEach(([k, v]) => nicheSel.add(new Option(v, k)));
+  const rows = state.queue.map(i => {
+    const det = i.detector_a ? ' <span class="status st-text_ready">детектор: идеальная репутация</span>' : "";
+    const desc = (i.description || "").slice(0, 160);
+    const ov = i.overview ? "<br><small>Обзор готов (" + i.overview.length + " знаков)</small>" : "";
+    return "<tr><td><input type='checkbox' class='qcheck' value='" + i.id + "'></td>" +
+      "<td><b>" + i.name + "</b>" + det + "<br><small>" + desc + "</small>" + ov + "</td>" +
+      "<td>" + (state.cats[i.term_id] || i.term_id) + "</td>" +
+      "<td>рейтинг " + (i.rating ?? "—") + "<br>отзывов " + (i.reviews ?? "—") + "<br>просмотров " + (i.views ?? "—") + "</td>" +
+      "<td><span class='status st-" + i.status + "'>" + i.status + "</span>" + (i.wp_id ? "<br><small>ID на сайте: " + i.wp_id + "</small>" : "") + "</td></tr>";
+  }).join("");
+  $("queue-table").innerHTML = state.queue.length
+    ? "<table><tr><th></th><th>Компания</th><th>Категория</th><th>Данные донора</th><th>Статус</th></tr>" + rows + "</table>"
+    : "Очередь пустая. Начни с вкладки «Парсер».";
+  const rsets = $("review-sets");
+  if (state.review_sets) {
+    rsets.innerHTML = state.review_sets.length ? state.review_sets.map(rs => {
+      const sm = rs.summary || {};
+      const chips = "<p>Всего: <b>" + sm.total + "</b> · средний рейтинг: <b>" + (sm.avg_rating ?? "—") + "</b> · негатива: <b>" + sm.negative + "</b> (" + (sm.neg_share ?? "—") + "%) · позитива: <b>" + sm.positive + "</b>" +
+        (sm.duplicate_texts ? " · повторяющихся текстов: <b>" + sm.duplicate_texts + "</b>" : "") +
+        (sm.burst_days && sm.burst_days.length ? " · всплески: " + sm.burst_days.map(b => b.date + " — " + b.count + " шт").join(", ") : "") + "</p>" +
+        (sm.top_complaint_words && sm.top_complaint_words.length ? "<p><small>Главные слова жалоб: " + sm.top_complaint_words.join(", ") + "</small></p>" : "") +
+        (rs.note ? "<p><small>" + rs.note + "</small></p>" : "");
+      const gd = sm.gap_detector;
+      const gdHtml = gd ? "<div style='border:1px solid " + (gd.level === "strong" ? "#e0a49e;background:#fdecea" : gd.level === "notice" ? "#e6cf8a;background:#fff7e6" : "#dde3ec;background:#f7f9fc") + ";border-radius:8px;padding:10px 12px;margin:8px 0'>" +
+        "<b>Детектор разрыва рейтингов:</b> " + gd.title +
+        (gd.signals && gd.signals.length ? "<br>" + gd.signals.join("<br>") : "") +
+        "<table style='margin-top:8px'><tr><th>Источник</th><th>Строгость</th><th>Отзывов</th><th>С оценкой</th><th>Средняя</th></tr>" +
+        gd.per_source.map(d => "<tr><td>" + d.source + "</td><td>" + d.tier + " <small>(" + d.tier_note + ")</small></td><td>" + d.count + "</td><td>" + d.rated + "</td><td>" + (d.avg ?? "—") + "</td></tr>").join("") +
+        "</table><small>Сигнал внутренний, для приоритета проверки. Публично компанию по нему не обвиняем.</small></div>" : "";
+      const rows = rs.items.map(i => "<tr><td>" + i.source + "</td><td>" + (i.author || "—") + "</td><td>" + (i.rating ?? "—") + "</td><td>" + (i.date || "—") + "</td><td>" + (i.title ? "<b>" + i.title + "</b><br>" : "") + (i.text || "").slice(0, 500) + "</td></tr>").join("");
+      return "<div class='card'><h2>" + rs.query + " <small>(" + rs.ts + ", источники: " + (rs.sources || []).join(", ") + ")</small></h2>" + chips + gdHtml +
+        "<p><button class='action blue' onclick='gemSummary(\"" + rs.id + "\")'>Сводка Gemini по жалобам</button></p>" +
+        (rs.gemini_summary ? "<div style='background:#f7f9fc;border:1px solid #dde3ec;border-radius:8px;padding:12px;white-space:pre-wrap'>" + rs.gemini_summary + "</div>" : "") +
+        "<div style='max-height:480px;overflow:auto'><table><tr><th>Источник</th><th>Автор</th><th>Оценка</th><th>Дата</th><th>Отзыв</th></tr>" + rows + "</table></div></div>";
+    }).join("") : "Пока ничего не собрано. Введи компанию выше.";
+  }
+  const man = $("manual-item");
+  const ready = state.queue.filter(i => i.overview);
+  man.innerHTML = ready.map(i => "<option value='" + i.id + "'>" + i.name + "</option>").join("") || "<option value=''>Нет карточек с готовым обзором</option>";
+  if (!window._modelSet) { $("set-model").value = s.gemini_model; $("set-wpurl").value = s.wp_url; window._modelSet = true; }
+}
+
+async function refresh() {
+  try { state = await api("/api/state"); render(); } catch (e) {}
+}
+setInterval(refresh, 2500);
+refresh();
+
+$("btn-parse").onclick = async () => { try { await api("/api/parse", { niche: $("niche").value, limit: +$("limit").value }); refresh(); } catch (e) { say(e); } };
+$("btn-gen-overview").onclick = async () => { try { await api("/api/generate", { ids: selectedIds(), kind: "overview" }); refresh(); } catch (e) { say(e); } };
+$("btn-gen-desc").onclick = async () => { try { await api("/api/generate", { ids: selectedIds(), kind: "description" }); refresh(); } catch (e) { say(e); } };
+$("btn-publish").onclick = async () => { try { await api("/api/publish", { ids: selectedIds(), publish: false }); refresh(); } catch (e) { say(e); } };
+$("btn-publish-now").onclick = async () => { if (confirm("Создать карточки и сразу опубликовать?")) { try { await api("/api/publish", { ids: selectedIds(), publish: true }); refresh(); } catch (e) { say(e); } } };
+$("btn-publish-ids").onclick = async () => { try { await api("/api/publish_ids", { ids: selectedIds() }); refresh(); } catch (e) { say(e); } };
+$("btn-remove").onclick = async () => { const ids = selectedIds(); if (!ids.length) return alert("Отметь карточки"); if (confirm("Убрать отмеченные из очереди программы? (На сайте ничего не меняется)")) { try { await api("/api/remove", { ids }); refresh(); } catch (e) { say(e); } } };
+$("btn-export").onclick = async () => { try { const j = await api("/api/export", { ids: selectedIds() }); alert("Готово: строк " + j.count + ". Файл: data/exports/import_export.txt\nЕго можно вставить в плагин «Модерация пачками» на сайте."); } catch (e) { say(e); } };
+$("btn-activity").onclick = async () => { try { const j = await api("/api/activity", { urls: $("act-urls").value }); $("act-results").innerHTML = j.results.map(r => "<div><b>" + r.verdict + "</b> — " + r.url + "<br><small>" + r.detail + "</small></div>").join(""); } catch (e) { say(e); } };
+$("btn-append").onclick = async () => { try { await api("/api/append_overview", { id: $("manual-item").value, wp_id: +$("manual-wpid").value }); refresh(); } catch (e) { say(e); } };
+$("btn-settings").onclick = async () => { try { await api("/api/settings", { gemini_key: $("set-gemini").value || undefined, gemini_model: $("set-model").value, wp_url: $("set-wpurl").value, wp_user: $("set-wpuser").value || undefined, wp_password: $("set-wppass").value || undefined }); alert("Настройки сохранены"); refresh(); } catch (e) { say(e); } };
+$("btn-reviews").onclick = async () => { try { await api("/api/reviews_collect", { query: $("rev-query").value, pages: +$("rev-pages").value }); refresh(); } catch (e) { say(e); } };
+async function gemSummary(setId) { try { await api("/api/reviews_summary", { set_id: setId }); refresh(); } catch (e) { say(e); } }
+</script>
+</body>
+</html>

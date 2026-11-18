@@ -1,0 +1,22 @@
+# Large binaries and databases (>100MB cannot be pushed to GitHub)
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sql
+*.zip
+*.tar.gz
+*.log
+
+# Python cache & test artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sensitive files & credentials
+.env
+*.key
+*token*
+credentials.json
