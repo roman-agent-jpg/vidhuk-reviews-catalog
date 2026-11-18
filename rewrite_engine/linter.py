@@ -175,7 +175,7 @@ def validate_rewritten_review(rewritten: Dict[str, Any], original: Dict[str, Any
             errors.append(f"L03_MULTI_HYPHEN: Prohibited sequence of multiple hyphens in {field_name}.")
 
     # Gate 4: Banned Clichés
-    combined_text = f"{title} {text} {pros} {cons}"
+    combined_text = f"{title}. {text}. {pros}. {cons}"
     for pat in COMPILED_ALL_CLICHES:
         m = pat.search(combined_text)
         if m:
