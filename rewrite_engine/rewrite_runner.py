@@ -105,165 +105,40 @@ class BaseLLMProvider(ABC):
         pass
 
 
+try:
+    from rewrite_engine.semantic_humanizer import rewrite_single_review
+except ImportError:
+    from semantic_humanizer import rewrite_single_review
+
+
 class MockLLMProvider(BaseLLMProvider):
     """
-    High-fidelity offline deterministic mock provider.
-    Rewrites reviews into unique, natural phrasing without em-dashes or forbidden clichés.
+    High-fidelity semantic humanizer provider.
+    Rewrites reviews into unique, natural phrasing without em-dashes, atypical brackets, or forbidden clichés.
+    Preserves exact factual meaning and sentiment polarity.
     Works offline with zero API cost and deterministic output for tests and benchmarks.
     """
     def __init__(self, failure_rate: float = 0.0):
         self.failure_rate = failure_rate
-        self.model_name = "mock-paraphraser-v1"
+        self.model_name = "semantic-humanizer-v2"
 
     async def rewrite(self, record: Dict[str, Any], feedback: Optional[List[str]] = None) -> Dict[str, Any]:
         if self.failure_rate > 0.0 and random.random() < self.failure_rate:
             raise RuntimeError("Simulated mock provider network failure")
 
-        await asyncio.sleep(0.002)  # micro-yield for realistic concurrency
-
-        orig_text = (record.get("text") or "").strip()
-        orig_title = (record.get("title") or "").strip()
-        lang = detect_language(orig_text, orig_title)
-        role = record.get("review_type", "klientov")
-        try:
-            rating = float(record.get("rating") or 3.0)
-        except (ValueError, TypeError):
-            rating = 3.0
-
-        # Clean source dashes to avoid inheriting raw unicode dashes
-        cleaned_text = orig_text.replace("—", ", ").replace("–", ", ").replace("―", ", ")
-        cleaned_title = orig_title.replace("—", " ").replace("–", " ").strip()
-
-        # Remove any donor clichés from original text
-        for pat in COMPILED_ALL_CLICHES:
-            cleaned_text = pat.sub("", cleaned_text)
-            cleaned_title = pat.sub("", cleaned_title)
-        cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
-        cleaned_title = re.sub(r"\s+", " ", cleaned_title).strip()
-
-        # Build varied human opening and structure based on language, role, and rating
-        if lang == "uk":
-            if role == "sotrudnikov":
-                if rating >= 4.0:
-                    openers = [
-                        "Працюю тут уже певний час, загалом враження дуже хороші. ",
-                        "Маю позитивний досвід роботи в цій компанії. ",
-                        "Команда зібралася дійсно тямуща, робочий процес організований належним чином. "
-                    ]
-                    pros = "Стабільна виплата заробітної плати, нормальне ставлення керівництва, хороший графік."
-                    cons = "Періодично трапляються термінові завдання, але це робочий момент."
-                elif rating <= 2.0:
-                    openers = [
-                        "Особистий досвід роботи виявився суцільним розчаруванням. ",
-                        "Категорично не раджу витрачати час на цю вакансію. ",
-                        "Обіцянки на співбесіді кардинально розійшлися з реальною ситуацією на місці. "
-                    ]
-                    pros = "Хіба що швидке оформлення, більше нічого доброго."
-                    cons = "Постійні перепрацювання, затримки з виплатами та неповага до персоналу."
-                else:
-                    openers = [
-                        "Звичайна робота зі своїми плюсами та очевидними мінусами. ",
-                        "Враження від роботи змішані, не все так просто. "
-                    ]
-                    pros = "Зручне розташування та прийнятні умови в цілому."
-                    cons = "Бракує чіткої комунікації всередині підрозділів."
-            else:
-                # Client review
-                if rating >= 4.0:
-                    openers = [
-                        "Замовляв тут уперше, залишився щиро задоволений сервісом. ",
-                        "Дійсно приємно мати справу з відповідальними людьми. ",
-                        "Швидко опрацювали моє звернення та все пояснили без зайвих питань. "
-                    ]
-                    pros = "Швидка доставка, уважні менеджери, відповідність опису."
-                    cons = "Трохи затримали трек-номер, але це дрібниці."
-                elif rating <= 2.0:
-                    openers = [
-                        "Вкрай незадоволений обслуговуванням, ставлення просто жахливе. ",
-                        "Зіткнувся з відвертою байдужістю та непрофесіоналізмом. ",
-                        "Нікому не раджу зв'язуватися, отримав лише зіпсований настрій і втрачений час. "
-                    ]
-                    pros = "Жодних плюсів не помітив."
-                    cons = "Грубе спілкування, зірвані терміни та повне небажання допомогти."
-                else:
-                    openers = [
-                        "Досвід вийшов неоднозначним, є суттєві плюси та помітні недоліки. ",
-                        "Загалом терпимо, але до високої оцінки явно не дотягує. "
-                    ]
-                    pros = "Замовлення все-таки отримав у цілості."
-                    cons = "Підтримка відповідає занадто довго, довелося нагадувати про себе."
-
-            prefix = random.choice(openers)
-            new_text = prefix + cleaned_text
-            new_title = f"Особистий досвід: {cleaned_title}" if cleaned_title else "Мій відгук про компанію"
-        else:
-            # Russian
-            if role == "sotrudnikov":
-                if rating >= 4.0:
-                    openers = [
-                        "Работаю здесь уже некоторое время, условия вполне устраивают. ",
-                        "Хорошее место работы, задачи понятные и коллектив адекватный. ",
-                        "В целом положительный опыт в компании, платят вовремя. "
-                    ]
-                    pros = "Своевременная оплата, адекватные задачи, понятные требования."
-                    cons = "Иногда бывают авралы перед дедлайнами."
-                elif rating <= 2.0:
-                    openers = [
-                        "К сожалению, опыт работы оставил только негативные эмоции. ",
-                        "Не советую тратить силы и нервы на данную вакансию. ",
-                        "Обещали одно, а по факту нагрузили кучей неоплачиваемой работы. "
-                    ]
-                    pros = "Плюсов для себя не нашел."
-                    cons = "Постоянные переработки, штрафы и невнимательное отношение начальства."
-                else:
-                    openers = [
-                        "Место работы со своими плюсами и минусами, средний уровень. ",
-                        "Впечатления от работы двоякие, есть нюансы. "
-                    ]
-                    pros = "Удобный график и близко к дому."
-                    cons = "Организация процессов местами хромает."
-            else:
-                # Client review
-                if rating >= 4.0:
-                    openers = [
-                        "Обращался сюда по совету знакомых, все сделали быстро и четко. ",
-                        "Приятно удивлен вниманием к деталям и оперативностью. ",
-                        "Заказ оформили моментально, покупкой остался доволен. "
-                    ]
-                    pros = "Быстрая отправка, вежливое общение, качество товара."
-                    cons = "Небольшая задержка с уведомлением об отправке."
-                elif rating <= 2.0:
-                    openers = [
-                        "Остался крайне недоволен взаимодействием, сервис нулевой. ",
-                        "Никому не рекомендую сюда обращаться, сплошная нервотрепка. ",
-                        "Полное пренебрежение клиентом и невыполнение обещаний. "
-                    ]
-                    pros = "Плюсов нет абсолютно."
-                    cons = "Хамство со стороны поддержки, задержка заказа и отказ в решении проблемы."
-                else:
-                    openers = [
-                        "Опыт получился спорным, вроде все решили, но осадочек остался. ",
-                        "Обычный средний уровень, до идеала далеко. "
-                    ]
-                    pros = "Товар в итоге доставили."
-                    cons = "Пришлось звонить дважды, чтобы уточнить статус отправки."
-
-            prefix = random.choice(openers)
-            new_text = prefix + cleaned_text
-            new_title = f"Реальный опыт: {cleaned_title}" if cleaned_title else "Честный отзыв о сотрудничестве"
-
-        # Sanitize to guarantee zero stray dashes or forbidden punctuation
-        sanitized_text = sanitize_review_text(new_text)
-        sanitized_title = sanitize_title(new_title)
-
+        await asyncio.sleep(0.0005)  # micro-yield for realistic concurrency
+        res = rewrite_single_review(record)
         return {
-            "rewritten_title": sanitized_title[:180],
-            "rewritten_text": sanitized_text,
-            "rewritten_pros": pros,
-            "rewritten_cons": cons,
-            "rewrite_lang": lang,
+            "rewritten_title": res["rewritten_title"],
+            "rewritten_text": res["rewritten_text"],
+            "rewritten_pros": res["rewritten_pros"],
+            "rewritten_cons": res["rewritten_cons"],
+            "rewrite_lang": res["rewrite_lang"],
             "rewrite_model": self.model_name
         }
+
+
+SemanticHumanizerProvider = MockLLMProvider
 
 
 class OpenAICompatibleProvider(BaseLLMProvider):
@@ -704,12 +579,24 @@ def parse_args():
     parser.add_argument("--commit-interval", type=int, default=25, help="Database write batch size")
     parser.add_argument("--rate-limit", "-r", type=float, default=120.0, help="Requests per minute limit (0 = unlimited)")
     parser.add_argument("--limit", "-l", type=int, default=0, help="Max reviews to process (0 = all)")
+    parser.add_argument("--reset", action="store_true", help="Reset all reviews to 'pending' before running")
     parser.add_argument("--dry-run", action="store_true", help="Run without persisting changes to SQLite")
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
+
+    if args.reset:
+        logger.info(f"Resetting all reviews in {args.db_path} to 'pending'...")
+        conn = sqlite3.connect(args.db_path, timeout=60.0)
+        cur = conn.cursor()
+        cur.execute("PRAGMA journal_mode = WAL;")
+        cur.execute("UPDATE reviews SET rewrite_status = 'pending', rewritten_title = NULL, rewritten_text = NULL, rewritten_pros = NULL, rewritten_cons = NULL, rewrite_error = NULL;")
+        reset_rows = cur.rowcount
+        conn.commit()
+        conn.close()
+        logger.info(f"Successfully reset {reset_rows} reviews to 'pending'.")
 
     # Provider instantiation
     if args.provider == "mock":
